@@ -1,0 +1,30 @@
+test_techflows_end_to_end1.py::ChatbotFlow::test_chatbot_flow
+--------------------------------------------------------------------
+Last Page: https://www.dazn.com/help
+ Duration: 104.12s
+  Browser: Chrome 119.0.6045.160
+   Driver: chromedriver 119.0.6045.105
+Timestamp: 1701963975  (Unix Timestamp)
+     Date: Thursday, 7 December 2023
+     Time: 9:16:15 PM  (India Standard Time, UTC+05:30)
+--------------------------------------------------------------------
+Traceback:
+  File "C:\Users\Nerwadi.Shashikala\PycharmProjects\pythonProject4\tests\test_techflows_end_to_end1.py", line 29, in test_chatbot_flow
+    self.open_dazn_help_page()
+  File "C:\Users\Nerwadi.Shashikala\PycharmProjects\pythonProject4\page_objects\techflows_helpermethods.py", line 76, in open_dazn_help_page
+    self.assertEqual(CurrentURL, "https://www.dazn.com/en-CA/help", "URL verified")
+  File "C:\Users\Nerwadi.Shashikala\AppData\Local\JetBrains\PyCharm 2023.2.1\plugins\python\helpers\pycharm\teamcity\diff_tools.py", line 33, in _patched_equals
+    old(self, first, second, msg)
+  File "C:\Users\Nerwadi.Shashikala\Anaconda3\Lib\unittest\case.py", line 837, in assertEqual
+    assertion_func(first, second, msg=msg)
+  File "C:\Users\Nerwadi.Shashikala\Anaconda3\Lib\unittest\case.py", line 1217, in assertMultiLineEqual
+    self.fail(self._formatMessage(msg, standardMsg))
+  File "C:\Users\Nerwadi.Shashikala\Anaconda3\lib\site-packages\seleniumbase\fixtures\base_case.py", line 8148, in fail
+    super().fail(msg)
+  File "C:\Users\Nerwadi.Shashikala\Anaconda3\Lib\unittest\case.py", line 676, in fail
+    raise self.failureException(msg)
+Exception: 'https://www.dazn.com/help' != 'https://www.dazn.com/en-CA/help'
+- https://www.dazn.com/help
++ https://www.dazn.com/en-CA/help
+?                      ++++++
+ : URL verified
