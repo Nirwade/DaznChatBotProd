@@ -1,4 +1,5 @@
 from seleniumbase import BaseCase
+import os
 
 class PPVF(BaseCase):
     signin_button_x = "//span[text()='Sign in']"
@@ -12,7 +13,7 @@ class PPVF(BaseCase):
     need_help_buttonlocator_css = "//span[contains(text(), 'Need help?')]"
     GreetingMessage1_locator_x = "//div[@data-testid='AutoMessage' and contains(text(), \"Hi there, I'm Zed, your digital assistant! I'm here to help you with your questions about DAZN\")]"
     GreetingMessage2_locator_x = "//div[@data-testid='AutoMessage' and contains(text(), \"Can you tell me your first name please?\")]"
-    GreetingMessage3_locator_x = "//div[contains(text(), \"Hi Nerwadi, I'm Zed, your digital assistant!\")]"
+    GreetingMessage3_locator_x = "//div[contains(text(), \"Hi rahul, I'm Zed, your digital assistant!\")]"
     GreetingMessage4_locator_x = "// div[contains(text(), 'Please choose one of the options below:')]"
     greatomeet_locator_x = "//div[@data-testid='AutoMessage' and contains(text(), 'Great to meet you shashi.')]"
     updatepayment_paywallbtw_csss = "button:contains('Update payment method/Insufficient funds')"
@@ -48,7 +49,12 @@ class PPVF(BaseCase):
     TypeEmailadress_x = "//div[contains(text(), \"Please type the email address you'd like to use.\")]"
     nameconfirmsendmsg_x = "(//div[contains(text(), 'Can you tell me your name please?')])[1]"
 
-
+    def get_password_from_environment(self):
+        password = os.environ.get('DAZN_PASSWORD')
+        print(f"Environment variable DAZN_PASSWORD: {password}")
+        if not password:
+            raise ValueError("Password not found in environment variable.")
+        return password
 
     def user_signin1_prod(self):
         self.open("https://www.dazn.com/en-GB/home")
@@ -57,8 +63,9 @@ class PPVF(BaseCase):
         self._print(f'Current URL is {CurrentURL}')
         self.click(self.acptterms_popuplocator_css, timeout=None)
         self.click(self.signin_button_x, timeout=None)
-        self.type(self.email_button_css, "nerwadi.shashikala@dazn.com", by="css selector", timeout=None)
-        self.type(self.password_button_css, "DAZN2022@Sh", by="css selector", timeout=None)
+        self.type(self.email_button_css, "rahul.varikela@dazn.com", by="css selector", timeout=None)
+        password = self.get_password_from_environment()
+        self.type(self.password_button_css, password, by="css selector", timeout=None)
         self.click(self.signinsubmit_buttonlocator_x, by="xpath", timeout=None)
         self.wait_for_element_present(self.signedpg_menu_button_x, timeout=None)
         self.click(self.signedpg_menu_button_x, by="xpath", timeout=None)
@@ -82,7 +89,7 @@ class PPVF(BaseCase):
     def verify_greeting1_prod(self):
         self.wait_for_element_visible(self.GreetingMessage3_locator_x, by="xpath", timeout=None)
         GreetingMessage1 = self.get_element(self.GreetingMessage3_locator_x, by="xpath", timeout=None)
-        expected_greeting_text = "Hi Nerwadi, I'm Zed, your digital assistant!"
+        expected_greeting_text = "Hi rahul, I'm Zed, your digital assistant!"
         actual_greeting_text = GreetingMessage1.text
         self._print(GreetingMessage1.text)
         #self.assert_exact_text("Hi Nerwadi, I'm Zed, your digital assistant!", "GreetingMessage3_locator_x", timeout=20)

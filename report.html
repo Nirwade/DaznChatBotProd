@@ -397,7 +397,7 @@ data: [
 
 {
 name: 'Passed',
-y: 5,
+y: 0,
 color: '#84d474'
 },
 
@@ -415,7 +415,7 @@ color: '#efd8b4'
 
 {
 name: 'Failed',
-y: 0,
+y: 5,
 color: '#f17476'
 },
 
@@ -424,10 +424,10 @@ color: '#f17476'
             });
             </script>
             
-    <p>Report generated on 18-Dec-2023 at 18:29:50 by <a href="https://pypi.python.org/pypi/pytest-html">pytest-html</a> v2.0.1</p>
+    <p>Report generated on 20-Dec-2023 at 15:26:06 by <a href="https://pypi.python.org/pypi/pytest-html">pytest-html</a> v2.0.1</p>
     <h2>Summary</h2>
-    <p>5 tests ran in 136.47 seconds. </p>
-    <p class="filter" hidden="true">(Un)check the boxes to filter the results.</p><input checked="true" class="filter" data-test-result="passed" hidden="true" name="filter_checkbox" onChange="filter_table(this)" type="checkbox"/><span class="passed">5 passed</span>, <input checked="true" class="filter" data-test-result="skipped" disabled="true" hidden="true" name="filter_checkbox" onChange="filter_table(this)" type="checkbox"/><span class="skipped">0 skipped</span>, <input checked="true" class="filter" data-test-result="failed" disabled="true" hidden="true" name="filter_checkbox" onChange="filter_table(this)" type="checkbox"/><span class="failed">0 failed</span>, <input checked="true" class="filter" data-test-result="error" disabled="true" hidden="true" name="filter_checkbox" onChange="filter_table(this)" type="checkbox"/><span class="error">0 errors</span>, <input checked="true" class="filter" data-test-result="xfailed" disabled="true" hidden="true" name="filter_checkbox" onChange="filter_table(this)" type="checkbox"/><span class="xfailed">0 expected failures</span>, <input checked="true" class="filter" data-test-result="xpassed" disabled="true" hidden="true" name="filter_checkbox" onChange="filter_table(this)" type="checkbox"/><span class="xpassed">0 unexpected passes</span>, <input checked="true" class="filter" data-test-result="rerun" disabled="true" hidden="true" name="filter_checkbox" onChange="filter_table(this)" type="checkbox"/><span class="rerun">0 rerun</span>
+    <p>5 tests ran in 96.95 seconds. </p>
+    <p class="filter" hidden="true">(Un)check the boxes to filter the results.</p><input checked="true" class="filter" data-test-result="passed" disabled="true" hidden="true" name="filter_checkbox" onChange="filter_table(this)" type="checkbox"/><span class="passed">0 passed</span>, <input checked="true" class="filter" data-test-result="skipped" disabled="true" hidden="true" name="filter_checkbox" onChange="filter_table(this)" type="checkbox"/><span class="skipped">0 skipped</span>, <input checked="true" class="filter" data-test-result="failed" hidden="true" name="filter_checkbox" onChange="filter_table(this)" type="checkbox"/><span class="failed">5 failed</span>, <input checked="true" class="filter" data-test-result="error" disabled="true" hidden="true" name="filter_checkbox" onChange="filter_table(this)" type="checkbox"/><span class="error">0 errors</span>, <input checked="true" class="filter" data-test-result="xfailed" disabled="true" hidden="true" name="filter_checkbox" onChange="filter_table(this)" type="checkbox"/><span class="xfailed">0 expected failures</span>, <input checked="true" class="filter" data-test-result="xpassed" disabled="true" hidden="true" name="filter_checkbox" onChange="filter_table(this)" type="checkbox"/><span class="xpassed">0 unexpected passes</span>, <input checked="true" class="filter" data-test-result="rerun" disabled="true" hidden="true" name="filter_checkbox" onChange="filter_table(this)" type="checkbox"/><span class="rerun">0 rerun</span>
     <h2>Results</h2>
     <table id="results-table">
       <thead id="results-table-head">
@@ -438,91 +438,69 @@ color: '#f17476'
           <th>Links</th></tr>
         <tr hidden="true" id="not-found-message">
           <th colspan="4">No results found. Try to check the filters</th></tr></thead>
-      <tbody class="passed results-table-row">
+      <tbody class="failed results-table-row">
         <tr>
-          <td class="col-result">Passed</td>
+          <td class="col-result">Failed</td>
           <td class="col-name">tests/test_ppv_end_to_end.py::PPVFlow::test_nonsigneduser_somethingelse</td>
-          <td class="col-duration">50.45</td>
-          <td class="col-links"></td></tr>
+          <td class="col-duration">18.82</td>
+          <td class="col-links"><a class="url" href="https://www.dazn.com/en-GB/help" target="_blank">URL</a> <a class="image" href="assets/tests_test_ppv_end_to_end.py__PPVFlow__test_nonsigneduser_somethingelse_1_0.png" target="_blank">Screenshot</a> </td></tr>
         <tr>
           <td class="extra" colspan="4">
-            <div class="log"> ------------------------------Captured stderr call------------------------------ <br/>Button clicked
-switch successful
-
- waiting for the agent
-Cancelled chat
-<br/></div></td></tr></tbody>
-      <tbody class="passed results-table-row">
+            <div class="image"><a href="assets/tests_test_ppv_end_to_end.py__PPVFlow__test_nonsigneduser_somethingelse_1_0.png"><img src="assets/tests_test_ppv_end_to_end.py__PPVFlow__test_nonsigneduser_somethingelse_1_0.png"/></a></div>
+            <div class="log">[gw0] win32 -- Python 3.9.13 C:\Users\Nerwadi.Shashikala\Anaconda3\python.exe<br/><br/>self = &lt;test_ppv_end_to_end.PPVFlow testMethod=test_nonsigneduser_somethingelse&gt;<br/><br/>    def test_nonsigneduser_somethingelse(self):<br/>        self.open(&quot;https://www.dazn.com/en-GB/help&quot;)<br/>        self.maximize_window()<br/>&gt;       self.click(self.acptterms_popuplocator_css, timeout=None)<br/><br/>tests\test_ppv_end_to_end.py:35: <br/>_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ <br/>..\..\Anaconda3\lib\site-packages\seleniumbase\fixtures\base_case.py:390: in click<br/>    element = page_actions.wait_for_element_visible(<br/>..\..\Anaconda3\lib\site-packages\seleniumbase\fixtures\page_actions.py:508: in wait_for_element_visible<br/>    timeout_exception(NoSuchElementException, message)<br/>_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ <br/><br/>exception = &lt;class &#x27;selenium.common.exceptions.NoSuchElementException&#x27;&gt;<br/>message = &#x27;Element {button#onetrust-accept-btn-handler} was not present after 7 seconds!&#x27;<br/><br/>    def timeout_exception(exception, message):<br/>        exc, msg = shared_utils.format_exc(exception, message)<br/>&gt;       raise exc(msg)<br/><span class="error">E       seleniumbase.common.exceptions.NoSuchElementException: Message: </span><br/><span class="error">E        Element {button#onetrust-accept-btn-handler} was not present after 7 seconds!</span><br/><br/>..\..\Anaconda3\lib\site-packages\seleniumbase\fixtures\page_actions.py:266: NoSuchElementException<br/></div></td></tr></tbody>
+      <tbody class="failed results-table-row">
         <tr>
-          <td class="col-result">Passed</td>
+          <td class="col-result">Failed</td>
           <td class="col-name">tests/test_ppv_end_to_end.py::PPVFlow::test_ppvfinale_DayofReckoning_NeedHelp</td>
-          <td class="col-duration">54.35</td>
-          <td class="col-links"></td></tr>
+          <td class="col-duration">18.82</td>
+          <td class="col-links"><a class="url" href="https://www.dazn.com/en-GB/home" target="_blank">URL</a> <a class="image" href="assets/tests_test_ppv_end_to_end.py__PPVFlow__test_ppvfinale_DayofReckoning_NeedHelp_1_0.png" target="_blank">Screenshot</a> </td></tr>
         <tr>
           <td class="extra" colspan="4">
-            <div class="log"> ------------------------------Captured stderr call------------------------------ <br/>Current URL is https://www.dazn.com/en-GB/home
-urlafterusersignin is -- https://www.dazn.com/help
-Button clicked
-switch successful
-Hi Nerwadi, I&#x27;m Zed, your digital assistant!
-Please choose one of the options below:
- waiting for the agent
-Cancelled chat
+            <div class="image"><a href="assets/tests_test_ppv_end_to_end.py__PPVFlow__test_ppvfinale_DayofReckoning_NeedHelp_1_0.png"><img src="assets/tests_test_ppv_end_to_end.py__PPVFlow__test_ppvfinale_DayofReckoning_NeedHelp_1_0.png"/></a></div>
+            <div class="log">[gw1] win32 -- Python 3.9.13 C:\Users\Nerwadi.Shashikala\Anaconda3\python.exe<br/><br/>self = &lt;test_ppv_end_to_end.PPVFlow testMethod=test_ppvfinale_DayofReckoning_NeedHelp&gt;<br/><br/>    def test_ppvfinale_DayofReckoning_NeedHelp(self):<br/>&gt;       self.user_signin1_prod()<br/><br/>tests\test_ppv_end_to_end.py:26: <br/>_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ <br/>page_objects\PPV_Reckoning_helpers.py:64: in user_signin1_prod<br/>    self.click(self.acptterms_popuplocator_css, timeout=None)<br/>..\..\Anaconda3\lib\site-packages\seleniumbase\fixtures\base_case.py:390: in click<br/>    element = page_actions.wait_for_element_visible(<br/>..\..\Anaconda3\lib\site-packages\seleniumbase\fixtures\page_actions.py:508: in wait_for_element_visible<br/>    timeout_exception(NoSuchElementException, message)<br/>_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ <br/><br/>exception = &lt;class &#x27;selenium.common.exceptions.NoSuchElementException&#x27;&gt;<br/>message = &#x27;Element {button#onetrust-accept-btn-handler} was not present after 7 seconds!&#x27;<br/><br/>    def timeout_exception(exception, message):<br/>        exc, msg = shared_utils.format_exc(exception, message)<br/>&gt;       raise exc(msg)<br/><span class="error">E       seleniumbase.common.exceptions.NoSuchElementException: Message: </span><br/><span class="error">E        Element {button#onetrust-accept-btn-handler} was not present after 7 seconds!</span><br/><br/>..\..\Anaconda3\lib\site-packages\seleniumbase\fixtures\page_actions.py:266: NoSuchElementException<br/> ------------------------------Captured stderr call------------------------------ <br/>Current URL is https://www.dazn.com/en-GB/home
 <br/></div></td></tr></tbody>
-      <tbody class="passed results-table-row">
+      <tbody class="failed results-table-row">
         <tr>
-          <td class="col-result">Passed</td>
+          <td class="col-result">Failed</td>
           <td class="col-name">tests/test_ppv_end_to_end.py::PPVFlow::test_ppvfinale_FightCard</td>
-          <td class="col-duration">77.77</td>
-          <td class="col-links"></td></tr>
+          <td class="col-duration">70.05</td>
+          <td class="col-links"><a class="url" href="https://www.dazn.com/en-GB/help" target="_blank">URL</a> <a class="image" href="assets/tests_test_ppv_end_to_end.py__PPVFlow__test_ppvfinale_FightCard_1_0.png" target="_blank">Screenshot</a> </td></tr>
         <tr>
           <td class="extra" colspan="4">
-            <div class="log"> ------------------------------Captured stderr call------------------------------ <br/>Current URL is https://www.dazn.com/en-GB/home
+            <div class="image"><a href="assets/tests_test_ppv_end_to_end.py__PPVFlow__test_ppvfinale_FightCard_1_0.png"><img src="assets/tests_test_ppv_end_to_end.py__PPVFlow__test_ppvfinale_FightCard_1_0.png"/></a></div>
+            <div class="log">[gw2] win32 -- Python 3.9.13 C:\Users\Nerwadi.Shashikala\Anaconda3\python.exe<br/><br/>self = &lt;test_ppv_end_to_end.PPVFlow testMethod=test_ppvfinale_FightCard&gt;<br/><br/>    def test_ppvfinale_FightCard(self):<br/>        self.open(&quot;https://www.dazn.com/en-GB/home&quot;)<br/>        self.user_signin1_prod()<br/>        self.accept_cookies_and_start_chat1_prod()<br/>&gt;       self.verify_greeting1_prod()<br/><br/>tests\test_ppv_end_to_end.py:9: <br/>_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ <br/>page_objects\PPV_Reckoning_helpers.py:90: in verify_greeting1_prod<br/>    self.wait_for_element_visible(self.GreetingMessage3_locator_x, by=&quot;xpath&quot;, timeout=None)<br/>..\..\Anaconda3\lib\site-packages\seleniumbase\fixtures\base_case.py:8541: in wait_for_element_visible<br/>    return page_actions.wait_for_element_visible(<br/>..\..\Anaconda3\lib\site-packages\seleniumbase\fixtures\page_actions.py:508: in wait_for_element_visible<br/>    timeout_exception(NoSuchElementException, message)<br/>_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ <br/><br/>exception = &lt;class &#x27;selenium.common.exceptions.NoSuchElementException&#x27;&gt;<br/>message = &#x27;Element {//div[contains(text(), &quot;Hi Nerwadi, I\&#x27;m Zed, your digital assistant!&quot;)]} was not present after 10 seconds!&#x27;<br/><br/>    def timeout_exception(exception, message):<br/>        exc, msg = shared_utils.format_exc(exception, message)<br/>&gt;       raise exc(msg)<br/><span class="error">E       seleniumbase.common.exceptions.NoSuchElementException: Message: </span><br/><span class="error">E        Element {//div[contains(text(), &quot;Hi Nerwadi, I&#x27;m Zed, your digital assistant!&quot;)]} was not present after 10 seconds!</span><br/><br/>..\..\Anaconda3\lib\site-packages\seleniumbase\fixtures\page_actions.py:266: NoSuchElementException<br/> ------------------------------Captured stdout call------------------------------ <br/>Environment variable DAZN_PASSWORD: 55555e
+<br/> ------------------------------Captured stderr call------------------------------ <br/>Current URL is https://www.dazn.com/en-GB/home
 urlafterusersignin is -- https://www.dazn.com/help
 Button clicked
 switch successful
-Hi Nerwadi, I&#x27;m Zed, your digital assistant!
-Please choose one of the options below:
-Figherlink clicked
-the new url is https://www.dazn.com/help/articles/day-of-reckoning
-switching back to orginal window
-switched to orginal window
 <br/></div></td></tr></tbody>
-      <tbody class="passed results-table-row">
+      <tbody class="failed results-table-row">
         <tr>
-          <td class="col-result">Passed</td>
+          <td class="col-result">Failed</td>
           <td class="col-name">tests/test_ppv_end_to_end.py::PPVFlow::test_ppvfinale_ForgotpwdLogin_Issue</td>
-          <td class="col-duration">79.13</td>
-          <td class="col-links"></td></tr>
+          <td class="col-duration">62.26</td>
+          <td class="col-links"><a class="url" href="https://www.dazn.com/en-GB/help" target="_blank">URL</a> <a class="image" href="assets/tests_test_ppv_end_to_end.py__PPVFlow__test_ppvfinale_ForgotpwdLogin_Issue_1_0.png" target="_blank">Screenshot</a> </td></tr>
         <tr>
           <td class="extra" colspan="4">
-            <div class="log"> ------------------------------Captured stderr call------------------------------ <br/>Current URL is https://www.dazn.com/en-GB/home
+            <div class="image"><a href="assets/tests_test_ppv_end_to_end.py__PPVFlow__test_ppvfinale_ForgotpwdLogin_Issue_1_0.png"><img src="assets/tests_test_ppv_end_to_end.py__PPVFlow__test_ppvfinale_ForgotpwdLogin_Issue_1_0.png"/></a></div>
+            <div class="log">[gw0] win32 -- Python 3.9.13 C:\Users\Nerwadi.Shashikala\Anaconda3\python.exe<br/><br/>self = &lt;test_ppv_end_to_end.PPVFlow testMethod=test_ppvfinale_ForgotpwdLogin_Issue&gt;<br/><br/>    def test_ppvfinale_ForgotpwdLogin_Issue(self):<br/>        self.user_signin1_prod()<br/>        self.accept_cookies_and_start_chat1_prod()<br/>&gt;       self.verify_greeting1_prod()<br/><br/>tests\test_ppv_end_to_end.py:22: <br/>_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ <br/>page_objects\PPV_Reckoning_helpers.py:90: in verify_greeting1_prod<br/>    self.wait_for_element_visible(self.GreetingMessage3_locator_x, by=&quot;xpath&quot;, timeout=None)<br/>..\..\Anaconda3\lib\site-packages\seleniumbase\fixtures\base_case.py:8541: in wait_for_element_visible<br/>    return page_actions.wait_for_element_visible(<br/>..\..\Anaconda3\lib\site-packages\seleniumbase\fixtures\page_actions.py:508: in wait_for_element_visible<br/>    timeout_exception(NoSuchElementException, message)<br/>_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ <br/><br/>exception = &lt;class &#x27;selenium.common.exceptions.NoSuchElementException&#x27;&gt;<br/>message = &#x27;Element {//div[contains(text(), &quot;Hi Nerwadi, I\&#x27;m Zed, your digital assistant!&quot;)]} was not present after 10 seconds!&#x27;<br/><br/>    def timeout_exception(exception, message):<br/>        exc, msg = shared_utils.format_exc(exception, message)<br/>&gt;       raise exc(msg)<br/><span class="error">E       seleniumbase.common.exceptions.NoSuchElementException: Message: </span><br/><span class="error">E        Element {//div[contains(text(), &quot;Hi Nerwadi, I&#x27;m Zed, your digital assistant!&quot;)]} was not present after 10 seconds!</span><br/><br/>..\..\Anaconda3\lib\site-packages\seleniumbase\fixtures\page_actions.py:266: NoSuchElementException<br/> ------------------------------Captured stdout call------------------------------ <br/>Environment variable DAZN_PASSWORD: 55555e
+<br/> ------------------------------Captured stderr call------------------------------ <br/>Current URL is https://www.dazn.com/en-GB/home
 urlafterusersignin is -- https://www.dazn.com/help
 Button clicked
 switch successful
-Hi Nerwadi, I&#x27;m Zed, your digital assistant!
-Please choose one of the options below:
-forgotpwdlink clicked
-the new url is https://www.dazn.com/signin/forgot-password
-switching back to orginal window
-switched to orginal window
 <br/></div></td></tr></tbody>
-      <tbody class="passed results-table-row">
+      <tbody class="failed results-table-row">
         <tr>
-          <td class="col-result">Passed</td>
+          <td class="col-result">Failed</td>
           <td class="col-name">tests/test_ppv_end_to_end.py::PPVFlow::test_ppvfinale_PPVFAQ</td>
-          <td class="col-duration">76.66</td>
-          <td class="col-links"></td></tr>
+          <td class="col-duration">67.11</td>
+          <td class="col-links"><a class="url" href="https://www.dazn.com/en-GB/help" target="_blank">URL</a> <a class="image" href="assets/tests_test_ppv_end_to_end.py__PPVFlow__test_ppvfinale_PPVFAQ_1_0.png" target="_blank">Screenshot</a> </td></tr>
         <tr>
           <td class="extra" colspan="4">
-            <div class="log"> ------------------------------Captured stderr call------------------------------ <br/>Current URL is https://www.dazn.com/en-GB/home
+            <div class="image"><a href="assets/tests_test_ppv_end_to_end.py__PPVFlow__test_ppvfinale_PPVFAQ_1_0.png"><img src="assets/tests_test_ppv_end_to_end.py__PPVFlow__test_ppvfinale_PPVFAQ_1_0.png"/></a></div>
+            <div class="log">[gw1] win32 -- Python 3.9.13 C:\Users\Nerwadi.Shashikala\Anaconda3\python.exe<br/><br/>self = &lt;test_ppv_end_to_end.PPVFlow testMethod=test_ppvfinale_PPVFAQ&gt;<br/><br/>    def test_ppvfinale_PPVFAQ(self):<br/>        self.open(&quot;https://www.dazn.com/en-GB/home&quot;)<br/>        self.user_signin1_prod()<br/>        self.accept_cookies_and_start_chat1_prod()<br/>&gt;       self.verify_greeting1_prod()<br/><br/>tests\test_ppv_end_to_end.py:16: <br/>_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ <br/>page_objects\PPV_Reckoning_helpers.py:90: in verify_greeting1_prod<br/>    self.wait_for_element_visible(self.GreetingMessage3_locator_x, by=&quot;xpath&quot;, timeout=None)<br/>..\..\Anaconda3\lib\site-packages\seleniumbase\fixtures\base_case.py:8541: in wait_for_element_visible<br/>    return page_actions.wait_for_element_visible(<br/>..\..\Anaconda3\lib\site-packages\seleniumbase\fixtures\page_actions.py:508: in wait_for_element_visible<br/>    timeout_exception(NoSuchElementException, message)<br/>_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ <br/><br/>exception = &lt;class &#x27;selenium.common.exceptions.NoSuchElementException&#x27;&gt;<br/>message = &#x27;Element {//div[contains(text(), &quot;Hi Nerwadi, I\&#x27;m Zed, your digital assistant!&quot;)]} was not present after 10 seconds!&#x27;<br/><br/>    def timeout_exception(exception, message):<br/>        exc, msg = shared_utils.format_exc(exception, message)<br/>&gt;       raise exc(msg)<br/><span class="error">E       seleniumbase.common.exceptions.NoSuchElementException: Message: </span><br/><span class="error">E        Element {//div[contains(text(), &quot;Hi Nerwadi, I&#x27;m Zed, your digital assistant!&quot;)]} was not present after 10 seconds!</span><br/><br/>..\..\Anaconda3\lib\site-packages\seleniumbase\fixtures\page_actions.py:266: NoSuchElementException<br/> ------------------------------Captured stdout call------------------------------ <br/>Environment variable DAZN_PASSWORD: 55555e
+<br/> ------------------------------Captured stderr call------------------------------ <br/>Current URL is https://www.dazn.com/en-GB/home
 urlafterusersignin is -- https://www.dazn.com/help
 Button clicked
 switch successful
-Hi Nerwadi, I&#x27;m Zed, your digital assistant!
-Please choose one of the options below:
-PPVFaqLink clicked
-the new url is https://www.dazn.com/help/articles/pay-per-view-faqs
-switching back to orginal window
-switched to orginal window
 <br/></div></td></tr></tbody></table></body></html>
