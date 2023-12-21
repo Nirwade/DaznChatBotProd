@@ -7,8 +7,11 @@ variables:
   DAZN_PASSWORD: "55555e"
 
 before_script:
-  - python -m venv venv
-  - . venv/Scripts/activate
+  - apt-get update -qy
+  - apt-get install -y python3 python3-venv  # Install Python and venv
+
+  - python3 -m venv venv
+  - . venv/bin/activate
   - pip install -r requirements.txt
 
 setup:
