@@ -12,14 +12,28 @@ before_script:
 
   - python3 -m venv venv
   - . venv/bin/activate
-  - pip install -r requirements.txt
+
+# Cache dependencies to speed up CI/CD pipeline
+cache:
+  paths:
+    - venv/
+    - ~/.cache/pip
 
 setup:
   stage: setup
   script:
+    - pip install -r requirements.txt
     - echo "Setup complete"
 
 test:
   stage: test
   script:
     - pytest -k "PPVFlow" -n=2 --dashboard --html=report.html
+
+# Store coverage as an artifact
+artifacts:
+  paths:
+    - PPV/  # Assuming screenshots are saved in PPV folder
+    - report.html
+    - dashboard.html
+
