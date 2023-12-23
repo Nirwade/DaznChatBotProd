@@ -24,16 +24,19 @@ setup:
   script:
     - pip install -r requirements.txt
     - echo "Setup complete"
+  artifacts:
+  paths:
+    - coverage/
 
 test:
   stage: test
   script:
     - pytest -k "PPVFlow" -n=2 --dashboard --html=report.html
 
-# Store coverage as an artifact
+
 artifacts:
   paths:
-    - PPV/  # Assuming screenshots are saved in PPV folder
+    - PPV/  
     - report.html
     - dashboard.html
 
