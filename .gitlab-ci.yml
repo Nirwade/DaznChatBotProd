@@ -4,7 +4,7 @@ stages:
 
 variables:
   ENVIRONMENT: "production"
-  DAZN_PASSWORD: "55555e"
+  DAZN_PASSWORD: "Sai@2000"
 
 before_script:
   - apt-get update -qy
