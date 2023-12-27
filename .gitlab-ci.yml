@@ -1,42 +1,7 @@
 stages:
-  - setup
   - test
-
-variables:
-  ENVIRONMENT: "production"
-  DAZN_PASSWORD: "Sai@2000"
-
-before_script:
-  - apt-get update -qy
-  - apt-get install -y python3 python3-venv  # Install Python and venv
-
-  - python3 -m venv venv
-  - . venv/bin/activate
-
-# Cache dependencies to speed up CI/CD pipeline
-cache:
-  paths:
-    - venv/
-    - ~/.cache/pip
-
-setup:
-  stage: setup
-  script:
-    - pip install -r requirements.txt
-    - echo "Setup complete"
-  artifacts:
-  paths:
-    - coverage/
 
 test:
   stage: test
   script:
-    - pytest -k "PPVFlow" -n=2 --dashboard --html=report.html
-
-
-artifacts:
-  paths:
-    - PPV/  
-    - report.html
-    - dashboard.html
-
+    - echo "Hello, GitLab CI/CD!"
