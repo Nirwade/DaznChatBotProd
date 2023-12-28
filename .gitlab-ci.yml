@@ -1,15 +1,9 @@
+image: python:3.8
+
 stages:
   - install_dependencies
-
-variables:
-  PYTHON_VERSION: "3.8"
-
-before_script:
-  - apt-get update -qy
-  - apt-get install -y python${PYTHON_VERSION} python${PYTHON_VERSION}-distutils
-  - python${PYTHON_VERSION} -m pip install --upgrade pip
 
 install_dependencies:
   stage: install_dependencies
   script:
-    - python${PYTHON_VERSION} -m pip install -r requirements.txt
+    - pip install -r requirements.txt
