@@ -1,8 +1,8 @@
-variables:
-  PYTHON_VERSION: "3.8"
-
 stages:
   - install_dependencies
+
+variables:
+  PYTHON_VERSION: "3.8"
 
 before_script:
   - apt-get update -qy
