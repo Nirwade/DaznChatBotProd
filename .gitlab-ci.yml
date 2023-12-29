@@ -18,4 +18,6 @@ run_tests:
   stage: run_tests
   script:
     - export DAZN_PASSWORD=$DAZN_PASSWORD  # Set environment variable for the current job
+    - pip install pytest
+    - env
     - pytest -k "test_nonsigneduser" -s
