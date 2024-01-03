@@ -2,7 +2,7 @@ from seleniumbase import BaseCase
 import os
 
 class PPVF(BaseCase):
-    signin_button_x = "//span[text()='Sign in']"
+    signin_button_x = "(//span[text()='Sign In'])[2]"
     email_button_css = "#email"
     password_button_css = "#password"
     signinsubmit_buttonlocator_x = "//button[@type='submit']"
@@ -48,6 +48,12 @@ class PPVF(BaseCase):
     Greetnonsignin_x = "//div[@data-testid='AutoMessage' and contains(text(), \"Hi there, I'm Zed, your digital assistant! I'm here to help you with your questions about DAZN\")]"
     TypeEmailadress_x = "//div[contains(text(), \"Please type the email address you'd like to use.\")]"
     nameconfirmsendmsg_x = "(//div[contains(text(), 'Can you tell me your name please?')])[1]"
+    Dazn_button_x1 = "//button[@class='sc-ciSkZP dzZdOC' and normalize-space(text())='DAZN']"
+    Paywall_button_x= "//button[contains(text(), \"'Update payment method/Insufficient funds' message\")]"
+    Paywall_yes_close_x = "//button[contains(text(), 'Yes, I can close it')]"
+    Paywall_myaccount_link_x = "//div[contains(text(), 'MyAccount')]"
+    Paywall_okthanks_x = "//button[contains(text(), 'Okay thanks')]"
+    mainmenubtw_x = "//button[contains(text(), 'Main menu')]"
 
     def get_password_from_environment(self):
         password = os.environ.get('DAZN_PASSWORD')
@@ -57,7 +63,7 @@ class PPVF(BaseCase):
         return password
 
     def user_signin1_prod(self):
-        self.open("https://www.dazn.com/en-GB/home")
+        #self.open("https://www.dazn.com/en-GB/home")
         self.maximize_window()
         CurrentURL = self.get_current_url()
         self._print(f'Current URL is {CurrentURL}')
@@ -296,6 +302,46 @@ class PPVF(BaseCase):
             casenumbertext = self.get_element(CaseNumber_Xpath, by="xpath", timeout=None)
             self._print(f'the case number generated as {casenumbertext.text}')
             self.save_screenshot("caseidcreation", "PaywallStagScreenshots")
+
+
+    def Paywall_NonSignedin_journey(self):
+        self.wait_for_element_visible(self.Dazn_button_x1, timeout=None)
+        self.click(self.Dazn_button_x1, timeout=None)
+        self.wait_for_element_visible(self.Paywall_button_x, timeout=None)
+        self.save_screenshot("paywallbutton", "PaywallProdScreenshots")
+        self.click(self.Paywall_button_x, timeout=None)
+        self.wait_for_element_visible(self.Paywall_yes_close_x, timeout=None)
+        self.click(self.Paywall_yes_close_x, timeout=None)
+        self.scroll_to_element(self.Paywall_myaccount_link_x, timeout=30)
+        self.wait_for_element_visible(self.Paywall_myaccount_link_x, by="xpath", timeout=None)
+        self.save_screenshot("yesIcancloseflow", "PaywallProdScreenshots")
+        self.click(self.Paywall_myaccount_link_x, timeout=None)
+        self._print("Myaccountlink clicked")
+        self.switch_to_newest_window()
+
+        # Verify the new window URL
+        new_URL = self.get_current_url()
+        self._print(f"the new url is {new_URL}")
+        self.wait(10)
+        self.assertEqual(new_URL,
+                         "https://www.dazn.com/myaccount/subscription")
+        self.assertTrue("myaccount" in new_URL)
+        self.save_screenshot("Accountlink", "PaywallProdScreenshots")
+        self.wait(10)
+        self._print("switching back to orginal window")
+        # Switch back to the original window
+        self.switch_to_default_window()
+        # self.switch_to_window(original_window_url, timeout=None)
+        self._print("switched to orginal window")
+        self.switch_to_frame("ada-chat-frame", timeout=None)
+        self.wait_for_element_visible(self.Paywall_okthanks_x, timeout=None)
+        self.click(self.Paywall_okthanks_x, timeout=None)
+        self.save_screenshot("closebuttons", "PaywallProdScreenshots")
+        self.wait_for_element_visible(self.mainmenubtw_x, timeout=None)
+        self.click(self.mainmenubtw_x, timeout=None)
+        self.save_screenshot("mainmenuclick", "PaywallProdScreenshots")
+
+
 
 
 

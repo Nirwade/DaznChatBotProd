@@ -17,12 +17,14 @@ class PPVFlow(PPVF):
         self.ppv_prod1()
 
     def test_ppvfinale_ForgotpwdLogin_Issue(self):
+        self.open("https://www.dazn.com/en-GB/help")
         self.user_signin1_prod()
         self.accept_cookies_and_start_chat1_prod()
         self.verify_greeting1_prod()
         self.ppv_prod2()
 
     def test_ppvfinale_DayofReckoning_NeedHelp(self):
+        self.open("https://www.dazn.com/en-GB/help")
         self.user_signin1_prod()
         self.accept_cookies_and_start_chat1_prod()
         self.verify_greeting1_prod()
@@ -31,9 +33,19 @@ class PPVFlow(PPVF):
 
     def test_nonsigneduser_somethingelse(self):
         self.open("https://www.dazn.com/en-GB/help")
-        self.maximize_window()
         self.click(self.acptterms_popuplocator_css, timeout=None)
         self.accept_cookies_and_start_chat1_prod()
         self.Non_signinuserJouney()
         self.ppv_prod3()
         self.Non_signinuserJouney1()
+
+    def test_paywallNonSignedUser(self):
+        self.open("https://www.dazn.com/en-GB/help")
+        self.maximize_window()
+        self.click(self.acptterms_popuplocator_css, timeout=None)
+        self.accept_cookies_and_start_chat1_prod()
+        self.Non_signinuserJouney()
+        self.Paywall_NonSignedin_journey()
+
+
+

@@ -1,6 +1,6 @@
 from seleniumbase import BaseCase
 from selenium.common.exceptions import NoSuchElementException
-
+import os
 class PayHelpers(BaseCase):
     signin_button_x = "//span[text()='Sign in']"
     email_button_css = "#email"
@@ -40,13 +40,18 @@ class PayHelpers(BaseCase):
     EnterIssueDescrip_locator_x = "//div[@data-testid='AutoMessage' and contains(text(), 'Can you provide a description of your issue?')]"
     CaseNumber_Xpath = "//div[@data-testid='AutoMessage' and contains(text(), 'A case has been created with number')]"
 
+    def get_password_from_environment(self):
+        password = os.environ.get('DAZN_PASSWORD')
+        print(f"Environment variable DAZN_PASSWORD: {password}")
+        if not password:
+            raise ValueError("Password not found in environment variable.")
+        return password
 
-
-    def user_signin_stag(self):
-        self.open("https://stag.dazn.com/en-IT/home")
+    def user_signin_prod(self):
+        #self.open("https://dazn.com/en-IT/home")
         self.maximize_window()
         CurrentURL = self.get_current_url()
-        self.assertEqual(CurrentURL, "https://stag.dazn.com/en-IT/home", "URL verified")
+        self.assertEqual(CurrentURL, "https://dazn.com/en-IT/home", "URL verified")
         # verifying if the en-CA is a part of currentURL
         self.assertTrue("en-IT" in CurrentURL)
         self._print(f'Current URL is {CurrentURL}')

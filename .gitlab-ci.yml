@@ -2,7 +2,6 @@ image: python:3.8
 
 stages:
   - install_dependencies
-  - run_tests
 
 variables:
   DAZN_PASSWORD: ${DAZN_PASSWORD}
@@ -11,13 +10,6 @@ install_dependencies:
   stage: install_dependencies
   script:
     - pip install -r requirements.txt
-    - pip list
-
-
-run_tests:
-  stage: run_tests
-  script:
-    - export DAZN_PASSWORD=$DAZN_PASSWORD  # Set environment variable for the current job
     - pip install pytest
-    - env
-    - pytest -k "test_nonsigneduser" -s
+    - export DAZN_PASSWORD=$DAZN_PASSWORD  # Set environment variable for the current job
+    - pytest -k "test_paywallNonSignedUser" -s
