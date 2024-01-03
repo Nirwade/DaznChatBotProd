@@ -42,7 +42,7 @@ class PPVFlow(PPVF):
     def test_paywallNonSignedUser(self):
         self.open("https://www.dazn.com/en-GB/help")
         self.maximize_window()
-        self.click(self.acptterms_popuplocator_css, timeout=None)
+        self.click(self.acptterms_popuplocator_css, timeout=20)
         self.accept_cookies_and_start_chat1_prod()
         self.Non_signinuserJouney()
         self.Paywall_NonSignedin_journey()

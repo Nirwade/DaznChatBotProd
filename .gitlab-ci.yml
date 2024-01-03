@@ -12,4 +12,4 @@ install_dependencies:
     - pip install -r requirements.txt
     - pip install pytest
     - export DAZN_PASSWORD=$DAZN_PASSWORD  # Set environment variable for the current job
-    - pytest -k "test_paywallNonSignedUser" -s
+    - pytest -k "test_paywallNonSignedUser" --headless
