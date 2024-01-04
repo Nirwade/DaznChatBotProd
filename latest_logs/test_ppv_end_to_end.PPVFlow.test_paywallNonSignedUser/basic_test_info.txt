@@ -1,15 +1,15 @@
 tests/test_ppv_end_to_end.py::PPVFlow::test_paywallNonSignedUser
 --------------------------------------------------------------------
 Last Page: https://www.dazn.com/en-ZA/help/
- Duration: 23.49s
-  Browser: Chrome 120.0.6099.111 / headless
-   Driver: (Unknown Driver)
-Timestamp: 1704257669  (Unix Timestamp)
-     Date: Wednesday, 3 January 2024
-     Time: 10:24:29 AM  (India Standard Time, UTC+05:30)
+ Duration: 39.79s
+  Browser: Chrome 120.0.6099.130 / headless2
+   Driver: chromedriver 120.0.6099.71
+Timestamp: 1704341828  (Unix Timestamp)
+     Date: Thursday, 4 January 2024
+     Time: 9:47:08 AM  (India Standard Time, UTC+05:30)
 --------------------------------------------------------------------
 Traceback:
-  File "C:\Users\Nerwadi.Shashikala\PycharmProjects\pythonProject4\tests\test_ppv_end_to_end.py", line 45, in test_paywallNonSignedUser
+  File "C:\Users\Nerwadi.Shashikala\PycharmProjects\pythonProject4\tests\test_ppv_end_to_end.py", line 48, in test_paywallNonSignedUser
     self.click(self.acptterms_popuplocator_css, timeout=20)
   File "C:\Users\Nerwadi.Shashikala\Anaconda3\lib\site-packages\seleniumbase\fixtures\base_case.py", line 390, in click
     element = page_actions.wait_for_element_visible(

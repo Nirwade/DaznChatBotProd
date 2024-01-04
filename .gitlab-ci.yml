@@ -2,6 +2,7 @@ image: python:3.8
 
 stages:
   - install_dependencies
+  - run_tests
 
 variables:
   DAZN_PASSWORD: ${DAZN_PASSWORD}
@@ -11,5 +12,14 @@ install_dependencies:
   script:
     - pip install -r requirements.txt
     - pip install pytest
-    - export DAZN_PASSWORD=$DAZN_PASSWORD  # Set environment variable for the current job
-    - pytest -k "test_paywallNonSignedUser" --headed
+
+run_tests:
+  stage: run_tests
+  script:
+    - apt-get update -qy
+    - apt-get install -y xvfb
+    - export DISPLAY=:10
+    - Xvfb :10 -screen 0 1024x768x24 -ac +extension GLX +render -noreset &
+    - pip install seleniumbase  # Install SeleniumBase
+    - pip install chromedriver-autoinstaller  # Install Chromedriver
+    - pytest -k "test_paywallNonSignedUser" -s
