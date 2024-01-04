@@ -1,17 +1,10 @@
 image: python:3.8
 
 stages:
-  - install_dependencies
   - run_tests
 
 variables:
   DAZN_PASSWORD: ${DAZN_PASSWORD}
-
-install_dependencies:
-  stage: install_dependencies
-  script:
-    - pip install -r requirements.txt
-    - pip install pytest
 
 run_tests:
   stage: run_tests
@@ -19,7 +12,23 @@ run_tests:
     - apt-get update -qy
     - apt-get install -y xvfb
     - export DISPLAY=:10
-    - Xvfb :10 -screen 0 1024x768x24 -ac +extension GLX +render -noreset &
+
+    # Create and activate a virtual environment
+    - python -m venv venv
+    - source venv/bin/activate
+
+    # Upgrade pip and install dependencies in the virtual environment
+    - pip install --upgrade pip
+    - pip install -r requirements.txt
+    - pip install pytest
     - pip install seleniumbase  # Install SeleniumBase
     - pip install chromedriver-autoinstaller  # Install Chromedriver
-    - pytest -k "test_paywallNonSignedUser" -s
+
+    # Run a simple check to ensure the virtual environment is working
+    - python -c "import sys; print(sys.prefix)"
+    - python -c "import sys; print(sys.executable)"
+    - python --version
+
+    # Run the specified test with a visible browser
+    - pytest -k "test_paywallNonSignedUser" --headed
+
