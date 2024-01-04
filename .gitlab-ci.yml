@@ -13,12 +13,12 @@ run_tests:
     - apt-get install -y xvfb
     - export DISPLAY=:10
 
-    # Change directory to the project root using PowerShell
-    - pwsh -Command "cd 'C:\Users\Nerwadi.Shashikala\PycharmProjects\pythonProject4'"
+    # Change directory to the project root using Command Prompt
+    - cd C:\Users\Nerwadi.Shashikala\PycharmProjects\pythonProject4
 
     # Create and activate a virtual environment
     - python -m venv venv
-    - source venv/bin/activate
+    - .\venv\Scripts\activate
 
     # Upgrade pip and install dependencies in the virtual environment
     - pip install --upgrade pip
@@ -34,5 +34,3 @@ run_tests:
 
     # Run the specified test with a visible browser
     - pytest tests/test_paywall_end_to_end.py --headed
-
-
