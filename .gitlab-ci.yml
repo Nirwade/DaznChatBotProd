@@ -13,6 +13,9 @@ run_tests:
     - apt-get install -y xvfb
     - export DISPLAY=:10
 
+    # Change directory to the project root
+    - cd C:\Users\Nerwadi.Shashikala\PycharmProjects\pythonProject4
+
     # Create and activate a virtual environment
     - python -m venv venv
     - source venv/bin/activate
@@ -30,5 +33,6 @@ run_tests:
     - python --version
 
     # Run the specified test with a visible browser
-    - pytest -k "test_paywallNonSignedUser" --headed
+    - pytest tests/test_paywall_end_to_end.py --headed
+
 

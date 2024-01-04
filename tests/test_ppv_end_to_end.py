@@ -43,7 +43,7 @@ class PPVFlow(PPVF):
         self.open("https://www.dazn.com/en-GB/help")
         self.maximize_window()
         self.save_screenshot("HeadlessFlow", "PPV")
-        self.click(self.acptterms_popuplocator_css, timeout=20)
+        self.click(self.acptterms_popuplocator_css, timeout=None)
         self.accept_cookies_and_start_chat1_prod()
         self.Non_signinuserJouney()
         self.Paywall_NonSignedin_journey()
