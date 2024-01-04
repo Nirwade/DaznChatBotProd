@@ -18,7 +18,7 @@ run_tests:
 
     # Create and activate a virtual environment
     - python -m venv venv
-    - .\venv\Scripts\activate
+    - source venv/bin/activate  # Use 'source' for activation on Linux
 
     # Upgrade pip and install dependencies in the virtual environment
     - pip install --upgrade pip
