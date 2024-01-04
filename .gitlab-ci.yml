@@ -13,8 +13,8 @@ run_tests:
     - apt-get install -y xvfb
     - export DISPLAY=:10
 
-    # Change directory to the project root
-    - cd C:\Users\Nerwadi.Shashikala\PycharmProjects\pythonProject4
+    # Change directory to the project root using PowerShell
+    - pwsh -Command "cd 'C:\Users\Nerwadi.Shashikala\PycharmProjects\pythonProject4'"
 
     # Create and activate a virtual environment
     - python -m venv venv
