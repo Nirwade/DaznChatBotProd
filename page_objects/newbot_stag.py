@@ -224,6 +224,14 @@ class NewBot(BaseCase):
         self.wait_for_element_present(self.support_text_btw, timeout=None)
         self.save_screenshot("signout4", "New Bot")
 
+    def signout5(self):
+        self.wait_for_element_present(self.main_menu_btw, timeout=None)
+        self.click(self.main_menu_btw, timeout=None)
+        self.wait_for_element_present(self.support_text_btw, timeout=None)
+        self.save_screenshot("signout5", "New Bot")
+
+
+
 
 
 
