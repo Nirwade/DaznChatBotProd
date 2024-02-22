@@ -1,0 +1,21 @@
+TEST_NAME_rec.py::MyTestClass::test_base
+--------------------------------------------------------------------
+Last Page: https://daznsupport1705599165.zendesk.com/hc/en-gb
+ Duration: 21.06s
+  Browser: Chrome 120.0.6099.225
+   Driver: chromedriver 120.0.6099.71
+Timestamp: 1706936043  (Unix Timestamp)
+     Date: Saturday, 3 February 2024
+     Time: 10:24:03 AM  (India Standard Time, UTC+05:30)
+--------------------------------------------------------------------
+Traceback:
+  File "C:\Users\Nerwadi.Shashikala\PycharmProjects\pythonProject4\recordings\TEST_NAME_rec.py", line 10, in test_base
+    self.click('/span[contains(text(), "Need help?")]')
+  File "C:\Users\Nerwadi.Shashikala\Anaconda3\lib\site-packages\seleniumbase\fixtures\base_case.py", line 390, in click
+    element = page_actions.wait_for_element_visible(
+  File "C:\Users\Nerwadi.Shashikala\Anaconda3\lib\site-packages\seleniumbase\fixtures\page_actions.py", line 508, in wait_for_element_visible
+    timeout_exception(NoSuchElementException, message)
+  File "C:\Users\Nerwadi.Shashikala\Anaconda3\lib\site-packages\seleniumbase\fixtures\page_actions.py", line 266, in timeout_exception
+    raise exc(msg)
+Exception: Message: 
+ Element {/span[contains(text(), "Need help?")]} was not present after 7 seconds!

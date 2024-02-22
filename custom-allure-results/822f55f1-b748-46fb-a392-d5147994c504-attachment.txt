@@ -1,0 +1,18 @@
+
+Warning: chromedriver not found. Getting it now:
+
+*** [34m[102mchromedriver to download[0m = [34m[103m120.0.6099.109[0m [34m[102m(Latest Stable)[0m 
+
+Downloading chromedriver-win64.zip from:
+https://edgedl.me.gvt1.com/edgedl/chrome/chrome-for-testing/120.0.6099.109/win64/chromedriver-win64.zip ...
+[34m[106mDownload Complete![0m
+
+Extracting ['chromedriver.exe'] from chromedriver-win64.zip ...
+[34m[102mUnzip Complete![0m
+
+The file [chromedriver.exe] was saved to:
+[34m[103mC:\Users\Nerwadi.Shashikala\PycharmProjects\pythonProject4\venv\Lib\site-packages\seleniumbase\drivers\chromedriver.exe[0m
+
+Making [chromedriver.exe 120.0.6099.109] executable ...
+[34m[106m[chromedriver.exe 120.0.6099.109] is now ready for use![0m
+
